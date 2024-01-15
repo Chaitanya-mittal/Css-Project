@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  --color1: #10454f;
+  --color2: #f2e3d5;
+  --p: 1rem;
+  --scale: 1.25;
+  --small: 0.8rem;
+  --h6: 1.2rem;
+  --h5: calc(var(--h6) * var(--scale));
+  --h4: calc(var(--h5) * var(--scale));
+  --h3: calc(var(--h4) * var(--scale));
+  --h2: calc(var(--h3) * var(--scale));
+  --h1: calc(var(--h2) * var(--scale));
+  --grenze: "Grenze Gotisch", serif;
+  --roboto: "Roboto";
+}
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: var(--color2);
+  font-family: var(--roboto);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+h1 {
+  font-size: var(--h1);
+}
+
+h2 {
+  font-size: var(--h2);
+  font-family: var(--grenze);
+}
+
+h3 {
+  font-size: var(--h3);
+}
+
+h4 {
+  font-size: var(--h4);
+}
+
+h5 {
+  font-size: var(--h5);
+}
+
+h6 {
+  font-size: var(--h6);
+}
+
+p {
+  font-size: var(--p);
+}
+
+.button-link {
+  background-color: var(--color1);
+  color: var(--color2);
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  opacity: 0.8;
+}
+.button-link:hover {
+  opacity: 1;
+}
+
+/* Navbar */
+
+nav {
+  padding: 1rem;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+nav h1 a {
+  color: var(--color2);
+  font-size: var(--h3);
+}
+
+nav li:first-child {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+nav a {
+  color: var(--color1);
+  text-decoration: none;
+  display: block;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: var(--color2);
+}
+
+/* Introduction  */
+#intro {
+  padding: 3rem 1rem 10rem;
+  background-color: var(--color1);
+}
+
+#intro p {
+  margin: 1rem 0;
+  line-height: 1.5;
+}
+
+#intro .first {
+  margin: 0;
+}
+
+#intro .first span {
+  display: block;
+  font-size: var(--h3);
+}
+
+/* Contact  */
+.contact-box {
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+#contact h3 {
+  margin-bottom: 2rem;
+}
+#contact p {
+  line-height: 1.5;
+}
+
+#contact p:last-child {
+  margin-top: 2rem;
+}
