@@ -49,7 +49,6 @@ h1 {
 
 h2 {
   font-size: var(--h2);
-  font-family: var(--grenze);
 }
 
 h3 {
@@ -70,6 +69,12 @@ h6 {
 
 p {
   font-size: var(--p);
+}
+section {
+  padding: 0 1rem;
+}
+img {
+  width: 100%;
 }
 
 .button-link {
@@ -104,6 +109,9 @@ nav ul {
 nav h1 a {
   color: var(--color2);
   font-size: var(--h3);
+  font-family: var(--grenze);
+  font-weight: 500;
+  letter-spacing: 3px;
 }
 
 nav li:first-child {
@@ -111,15 +119,29 @@ nav li:first-child {
   text-align: center;
 }
 
-nav a {
-  color: var(--color1);
+nav li a {
+  color: var(--color2);
   text-decoration: none;
   display: block;
   font-weight: 600;
+  transition: all 0.1s 0.1s ease-in;
 }
 
-nav a:hover {
-  color: var(--color2);
+nav li a:hover {
+  color: white;
+  transform: scale(1.1);
+}
+
+@media screen and (min-width: 850px) {
+  nav {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  nav li:first-child {
+    flex-basis: auto;
+    margin-right: auto;
+  }
 }
 
 /* Introduction  */
@@ -139,10 +161,30 @@ nav a:hover {
 
 #intro .first span {
   display: block;
+  padding-left: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--color2);
+  max-width: 300px;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  border: none;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
   font-size: var(--h3);
+  font-weight: 900;
+}
+
+@media screen and (min-width: 850px) {
+  #intro div {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
 }
 
 /* Contact  */
+#contact {
+  padding: 1rem;
+  background-color: var(--color1);
+}
 .contact-box {
   text-align: center;
   max-width: 400px;
@@ -159,4 +201,176 @@ nav a:hover {
 
 #contact p:last-child {
   margin-top: 2rem;
+}
+
+/* footer  */
+#footer {
+  padding: 1rem;
+  text-align: center;
+}
+
+footer {
+  margin: 0 auto;
+  max-width: 400px;
+  color: var(--color1);
+}
+
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 1rem 0;
+}
+
+footer ul a {
+  display: block;
+  font-size: var(--p);
+  color: var(--color1);
+}
+
+footer ul a:hover {
+  color: var(--color2);
+}
+
+footer p {
+  font-size: var(--small);
+}
+
+/* Projects */
+
+#projects {
+  padding: 4rem 1rem;
+}
+
+#projects h1 {
+  font-family: var(--grenze);
+  margin-bottom: 3rem;
+  text-align: center;
+  letter-spacing: 2rem;
+  font-weight: 900;
+  color: var(--color1);
+}
+
+#projects article,
+#about article {
+  margin-bottom: 5rem;
+}
+
+.project-info ul {
+  list-style-type: none;
+  margin: 5px 0 0 0;
+  display: flex;
+  text-decoration: wavy;
+  align-items: center;
+  justify-content: flex-start;
+  flex-flow: row wrap;
+  gap: 2rem;
+}
+
+.project-info-text h6 {
+  font-size: var(--p);
+  margin-bottom: 5px;
+}
+.project-description {
+  background-color: var(--color1);
+  padding: 1rem;
+  line-height: 1.5;
+  border-radius: 10px;
+  margin: 1rem 0;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.project-description a {
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.344);
+  border-radius: 5px;
+  color: var(--color2);
+  padding: 1px 4px;
+}
+
+#projects article img,
+#about article img {
+  margin-top: 2rem;
+  border-top: 2px dashed;
+  border-left: 2px dashed;
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+@media screen and (min-width: 600px) {
+  #projects article,
+  #about article {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 1rem;
+  }
+
+  .project-info-text,
+  .about-text {
+    order: 3;
+    text-align: right;
+    grid-column: 5/11;
+    grid-row: 1/2;
+  }
+
+  .project-info-text ul {
+    justify-content: flex-end;
+  }
+  article img {
+    grid-column: 1/6;
+    grid-row: 1/2;
+    order: 2;
+  }
+
+  #projects article:nth-child(2n) .project-info-text {
+    order: 1;
+    grid-column: 1/7;
+    z-index: 2;
+    text-align: left;
+  }
+
+  #projects article:nth-child(2n) ul {
+    justify-content: flex-start;
+  }
+
+  #projects article:nth-child(2n) img {
+    order: 2;
+    text-align: left;
+    grid-column: 6/11;
+  }
+
+  .about-text {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  #projects article,
+  #about article {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* About Page  */
+
+#about {
+  background-color: var(--color1);
+  padding: 5rem 1rem;
+}
+
+.about-text p {
+  background-color: var(--color2);
+  color: var(--color1);
+  border-radius: 5px;
+  padding: 1rem;
+  font-size: var(--h6);
+  border: none;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 }
